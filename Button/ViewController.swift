@@ -9,16 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet weak var switchButton: UISwitch!
+    @IBOutlet weak var textStatus: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func switchStatus(_ sender: Any) {
+        if switchButton.isOn {
+            textStatus.text = "You turned the switch on!!"
+        } else {
+            textStatus.text = "You just turned the switch off!"
+        }
     }
+    
 
 
 }
